@@ -543,7 +543,7 @@ namespace Arrowgene.Ez2Off.Server.Reboot13.Packets.Builder
             foreach (Room room in rooms)
             {
                 buffer.WriteInt16(room.Info.Number, Endianness.Big); // 방 번호
-                buffer.WriteByte(0);
+                buffer.WriteByte(0);// Playing Room? yes!
                 buffer.WriteByte(room.Info.MaxPlayer); // 최대 인원수
                 buffer.WriteByte((byte) room.GetClients().Count); // 현재 참여한 인원수
                 buffer.WriteByte((byte) room.Info.GameType); // 0 = 싱글 1 = 멀티
